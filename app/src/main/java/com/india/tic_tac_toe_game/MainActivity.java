@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.Button;
 
@@ -14,25 +15,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_font_page);
 
-        Button btn1 = findViewById(R.id.button1);
-        Button btn2 = findViewById(R.id.button2);
-
-        btn1.setOnClickListener(new View.OnClickListener() {
+        new Handler().postDelayed(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Intent iNext = new Intent(MainActivity.this, fontPage.class);
-                startActivity(iNext);
-
-            }
-        });
-
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            public void run() {
+                startActivity(new Intent(MainActivity.this,fontPage.class));
                 finish();
-                System.exit(0);
             }
-        });
+        },3000);
 
     }
 }

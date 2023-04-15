@@ -6,18 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".fontPage">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="cursive"
-        android:text="@string/gameName"
-        android:textColor="#F80505"
-        android:textSize="40sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="0dp"
+        android:layout_height="123dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/name" />
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,9 +21,11 @@
         android:contentDescription="@string/elements"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/grid" />
+        app:layout_constraintTop_toTopOf="@+id/imageView11"
+        app:srcCompat="@drawable/grid"
+        android:layout_marginTop="60dp"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -38,7 +35,8 @@
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="60dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,10 +49,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="@string/app_name"
+                android:contentDescription="@string/elements"
                 android:onClick="check"
                 android:padding="20dp"
-                android:tag="0" />
+                android:tag="0"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="222dp" />
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:contentDescription="@string/elements"
+                android:contentDescription="@string/app_name"
                 android:onClick="check"
                 android:padding="20dp"
                 android:tag="2" />
@@ -154,14 +154,18 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="cursive"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
         android:text="@string/result"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.85" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

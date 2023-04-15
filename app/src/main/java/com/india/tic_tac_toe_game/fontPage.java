@@ -22,12 +22,13 @@ public class fontPage extends AppCompatActivity {
             {0,4,8},{2,4,6}
     };
 
-
     public void check(View view){
 
         ImageView image = (ImageView) view;
         TextView text = findViewById(R.id.textView2);
+
         int tgaOfImage = Integer.parseInt(image.getTag().toString());
+        text.setBackgroundColor(getResources().getColor(R.color.white));
 
         if(!playerStatus){
             gameReset(view);
@@ -42,12 +43,12 @@ public class fontPage extends AppCompatActivity {
             image.setTranslationY(-1000f);
 
             if(activePlayer == 0){
-                image.setImageResource(R.drawable.one);
+                image.setImageResource(R.drawable.o11);
                 fullStatus++;
                 activePlayer = 1;
                 text.setText("X turn Tap to play");
             }else{
-                image.setImageResource(R.drawable.two);
+                image.setImageResource(R.drawable.o12);
                 fullStatus++;
                 activePlayer = 0;
                 text.setText("O turn Tap to play");
@@ -60,8 +61,10 @@ public class fontPage extends AppCompatActivity {
                 playerStatus = false;
                 if(gameState[winPosition[0]] == 0){
                     text.setText("Player O has won");
+                    text.setBackgroundColor(getResources().getColor(R.color.oGreen));
                 }else{
                     text.setText("Player X has won");
+                    text.setBackgroundColor(getResources().getColor(R.color.xRed));
                 }
             }
         }
